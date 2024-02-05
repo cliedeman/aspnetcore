@@ -317,6 +317,7 @@ public class ExceptionHandlerMiddlewareTest : LoggedTest
                 .UseTestServer()
                 .Configure(app =>
                 {
+                    app.MapDefaultControllerRoute();
                     app.UseExceptionHandler(new ExceptionHandlerOptions
                     {
                         ExceptionHandler = (c) => Task.CompletedTask
